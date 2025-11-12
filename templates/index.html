@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Prueba de Velocidad — Inicio</title>
+
+  <!-- Fuente -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    :root {
+      --purple-900: #1f0b3a;
+      --purple-700: #5b2a86;
+      --purple-500: #7a4bbf;
+      --accent: #9f7bff;
+      --muted: #f6f6fb;
+      --card-bg: rgba(255,255,255,0.95);
+    }
+
+    html, body {
+      height: 100%;
+      margin: 0;
+      font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial;
+      background: linear-gradient(180deg, #2e063f 0%, #47146d 100%);
+      color: var(--purple-900);
+    }
+
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      overflow: hidden;
+    }
+
+    .panel {
+      position: relative;
+      z-index: 10;
+      width: 100%;
+      max-width: 880px;
+      background: var(--card-bg);
+      border-radius: 18px;
+      padding: 48px 40px;
+      box-shadow: 0 10px 40px rgba(48,12,80,0.25);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(130,100,200,0.08);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .brand .logo {
+      width: 60px;
+      height: 60px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, var(--purple-700), var(--accent));
+      box-shadow: 0 8px 20px rgba(120,64,200,0.25);
+    }
+
+    .brand h1 {
+      margin: 0;
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--purple-900);
+    }
+
+    .brand p {
+      margin: 0;
+      color: #6b5aa6;
+      font-size: 0.95rem;
+    }
+
+    .hero-actions {
+      margin-top: 24px;
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background: linear-gradient(90deg, var(--purple-700), var(--purple-500));
+      border: none;
+      box-shadow: 0 6px 18px rgba(120,64,200,0.18);
+      padding: 10px 20px;
+      font-weight: 600;
+      border-radius: 10px;
+      transition: all .15s ease;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 24px rgba(120,64,200,0.28);
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 1px solid rgba(120,64,200,0.2);
+      color: var(--purple-900);
+      padding: 10px 20px;
+      border-radius: 10px;
+      font-weight: 500;
+      transition: all .15s ease;
+    }
+
+    .btn-outline:hover {
+      background: rgba(127,85,210,0.06);
+      transform: translateY(-2px);
+    }
+
+    /* Fondo animado */
+    .triangles {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      opacity: 0.95;
+    }
+
+    .tri-group { transform-origin: center; }
+    .anim-slow { animation: float-rotate 36s linear infinite; }
+    .anim-medium { animation: float-rotate 24s linear infinite; }
+    .anim-fast { animation: float-rotate 14s linear infinite; }
+
+    @keyframes float-rotate {
+      0% { transform: translateY(0px) rotate(0deg); opacity: 0.95; }
+      50% { transform: translateY(-20px) rotate(180deg); opacity: 0.9; }
+      100% { transform: translateY(0px) rotate(360deg); opacity: 0.95; }
+    }
+
+    @media (max-width: 720px) {
+      .panel { padding: 28px; border-radius: 12px; }
+      .brand h1 { font-size: 1.3rem; }
+      .brand .logo { width: 50px; height: 50px; }
+    }
+
+    /* Nuevo pie de página profesional */
+    footer {
+      text-align: center;
+      margin-top: 32px;
+      color: #8b7eb6;
+      font-size: 0.9rem;
+      border-top: 1px solid rgba(130,100,200,0.1);
+      padding-top: 18px;
+    }
+  </style>
+</head>
+<body>
+
+  <main class="hero">
+    <!-- Fondo SVG animado -->
+    <svg class="triangles" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="g1" x1="0" x2="1" y1="0" y2="1">
+          <stop offset="0%" stop-color="#8b5cf6" stop-opacity="0.18"/>
+          <stop offset="100%" stop-color="#c084fc" stop-opacity="0.06"/>
+        </linearGradient>
+      </defs>
+      <rect x="-10" y="-10" width="1220" height="820" fill="url(#g1)"></rect>
+      <g class="tri-group anim-slow" transform="translate(100 50)">
+        <polygon points="0,120 60,0 120,120" fill="#fff" opacity="0.03"/>
+        <polygon points="0,20 40,0 80,20" fill="#fff" opacity="0.05" transform="translate(220,80) rotate(15)"/>
+        <polygon points="0,60 45,0 90,60" fill="#7a4bbf" opacity="0.08" transform="translate(420,140) rotate(-8)"/>
+      </g>
+      <g class="tri-group anim-medium" transform="translate(600 220)">
+        <polygon points="0,180 90,0 180,180" fill="#5b2a86" opacity="0.06"/>
+        <polygon points="0,110 60,0 120,110" fill="#fff" opacity="0.04" transform="translate(320,20) rotate(12)"/>
+        <polygon points="0,80 45,0 90,80" fill="#9f7bff" opacity="0.09" transform="translate(180,120) rotate(-20)"/>
+      </g>
+    </svg>
+
+    <!-- Contenido principal -->
+    <section class="panel text-start">
+      <div class="d-flex justify-content-between align-items-start flex-wrap">
+        <div class="brand">
+          <div class="logo">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M3 12l6-6 6 6 6-6v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V12z" fill="white" opacity="0.95"/>
+              <path d="M7 12v6" stroke="rgba(255,255,255,0.65)" stroke-width="1.2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div>
+            <h1>Panel de Pruebas</h1>
+            <p>Mide latencia, velocidad y guarda tu historial.</p>
+          </div>
+        </div>
+        <div class="text-end mt-3 mt-sm-0">
+          <small style="color:#8a78b6;">Bienvenido</small>
+          <div style="font-weight:700; color:var(--purple-900);">Usuario</div>
+        </div>
+      </div>
+
+      <hr style="border:none;border-top:1px solid rgba(120,64,200,0.06); margin:20px 0;">
+
+      <p class="lead" style="color:#552f7d; font-weight:600;">
+        Realiza pruebas de red precisas con registro automático por usuario.
+      </p>
+
+      <div class="hero-actions">
+        <a href="{{ url_for('login') }}" class="btn btn-primary">🔑 Iniciar sesión</a>
+        <a href="{{ url_for('register') }}" class="btn btn-outline">📝 Crear cuenta</a>
+        <a href="{{ url_for('newtest') }}" class="btn btn-outline">⚡ Prueba rápida</a>
+      </div>
+
+      <footer>
+        <small>© 2025 Prueba de Velocidad. Todos los derechos reservados.</small>
+      </footer>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
